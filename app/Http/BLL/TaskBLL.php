@@ -45,4 +45,10 @@ class TaskBLL implements TaskBLLInterface
             'description' => $request->description ?? null,
         ]);
     }
+
+    public function getTasksByEmail($email)
+    {
+        return $this->model->leftJoin('users', 'tasks.user_id', 'users.id')
+            ->where('users.email', $email)->select('tasks.*')->get();
+    }
 }

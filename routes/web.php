@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
 
+Route::get('/get-tasks', [App\Http\Controllers\TaskController::class, 'getTasksByEmail']);
 
 
 Route::get('{any}', function () {

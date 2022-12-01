@@ -9,4 +9,6 @@ interface TaskBLLInterface
     public function storeTask($request);
 
     public function updateTask($request, $task);
+
+    public function getTasksByEmail($email);
 }

@@ -51,4 +51,11 @@ class TaskController extends Controller
     {
         $task->delete();
     }
+
+    public function getTasksByEmail()
+    {
+        $tasks = $this->taskBLL->getTasksByEmail(request()->email);
+
+        return response()->json(['tasks' => $tasks]);
+    }
 }
